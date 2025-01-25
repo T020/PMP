@@ -57,6 +57,9 @@
             left: 13.9%;
             transform: translateX(-50%);
             z-index: 1;
+            display: flex;
+            flex-direction: column; /* Esto asegura que los botones se apilen de arriba hacia abajo */
+            gap: 10px; /* Espacio entre los botones */
         }
 
         button {
@@ -67,7 +70,6 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 13px;
-            margin-bottom: 10px;
         }
 
         button:hover {
