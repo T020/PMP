@@ -40,14 +40,38 @@
         /* Estilo del logo */
         .logo {
             position: fixed;
-            top: 40px; /* Separación desde el borde superior */
-            left: 10%; /* Separación desde el borde izquierdo */
-            z-index: 2; /* Asegura que esté por encima del video */
+            top: 40px;
+            left: 10%;
+            z-index: 2;
         }
 
         .logo img {
-            width: 120px; /* Ajusta el tamaño del logo */
+            width: 120px;
             height: auto;
+        }
+
+        /* Estilo de los botones */
+        .button-container {
+            position: fixed;
+            top: 25%;
+            left: 13.9%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        button {
+            padding: 10px 35px;
+            background-color: rgba(64,179,230,0.20);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: rgba(64,179,230,0.35);
         }
 
         /* Estilo del formulario */
@@ -56,58 +80,25 @@
             padding: 20px;
             border-radius: 10px;
             display: inline-block;
-            width: 50%; /* Ancho del formulario */
+            width: 50%;
             max-width: 350px;
-            display: none; /* Formulario inicialmente oculto */
+            display: none;
             text-align: left;
             position: fixed;
-            bottom: 0; /* Pegado a la parte inferior */
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            margin-bottom: 50px; /* Separación del borde inferior */
+            margin-bottom: 50px;
         }
 
         input, select, button[type="submit"] {
             margin: 10px 0;
             padding: 10px;
-            width: 90%; /* Ancho reducido */
+            width: 90%;
             border: none;
             border-radius: 5px;
         }
 
-        button {
-            background-color:rgba(64,179,230,0.30);
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-            padding: 10px 20px;
-            font-size: 14px;
-            border: none;
-        }
-
-        button:hover {
-            background-color: rgba(64,179,230,0.30);
-        }
-
-        /* Estilo del botón de contacto */
-        #contacto-btn {
-            padding: 10px 35px;
-            background-color: rgba(64,179,230,0.20);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            position: fixed;
-            top: 25%; /* Más cerca del borde superior */
-            left: 13.9%;
-            transform: translateX(-50%);
-            font-size: 13px;
-            z-index: 1;
-        }
-
-        #contacto-btn:hover {
-            background-color: rgba(64,179,230,0.35);
-        }
     </style>
 </head>
 <body>
@@ -124,36 +115,40 @@
         <img src="https://github.com/T020/PMP/blob/main/PMPlogo-removebg-preview.png?raw=true" alt="Logo PMP">
     </div>
 
-    <!-- Contenido principal -->
-    <div class="content">
+    <!-- Contenedor de los botones -->
+    <div class="button-container">
         <!-- Botón de contacto -->
         <button id="contacto-btn" onclick="toggleFormulario()">Contacto</button>
 
-        <!-- Formulario oculto -->
-        <form id="formulario" action="https://formspree.io/f/mqaeakqr" method="POST">
-            <label for="nombre">Nombre:</label><br>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required><br>
-
-            <label for="apellido">Apellido:</label><br>
-            <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required><br>
-
-            <label for="email">Correo Electrónico:</label><br>
-            <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required><br>
-
-            <label for="genero">Género:</label><br>
-            <select id="genero" name="genero" required>
-                <option value="">Selecciona una opción</option>
-                <option value="masculino">Masculino</option>
-                <option value="femenino">Femenino</option>
-                <option value="otro">Otro</option>
-            </select><br>
-
-            <label for="fecha">Fecha de Nacimiento:</label><br>
-            <input type="date" id="fecha" name="fecha" required><br>
-
-            <button type="submit">Enviar</button>
-        </form>
+        <!-- Agregar más botones -->
+        <button id="otro-boton">Otro Botón 1</button>
+        <button id="otro-boton2">Otro Botón 2</button>
     </div>
+
+    <!-- Formulario oculto -->
+    <form id="formulario" action="https://formspree.io/f/mqaeakqr" method="POST">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required><br>
+
+        <label for="apellido">Apellido:</label><br>
+        <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required><br>
+
+        <label for="email">Correo Electrónico:</label><br>
+        <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required><br>
+
+        <label for="genero">Género:</label><br>
+        <select id="genero" name="genero" required>
+            <option value="">Selecciona una opción</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+        </select><br>
+
+        <label for="fecha">Fecha de Nacimiento:</label><br>
+        <input type="date" id="fecha" name="fecha" required><br>
+
+        <button type="submit">Enviar</button>
+    </form>
 
     <script>
         // Función para mostrar u ocultar el formulario
