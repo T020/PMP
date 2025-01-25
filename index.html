@@ -37,6 +37,19 @@
             background: black;
         }
 
+        /* Estilo del logo */
+        .logo {
+            position: fixed;
+            top: 10px; /* Separación desde el borde superior */
+            left: 10px; /* Separación desde el borde izquierdo */
+            z-index: 2; /* Asegura que esté por encima del video */
+        }
+
+        .logo img {
+            width: 120px; /* Ajusta el tamaño del logo */
+            height: auto;
+        }
+
         /* Estilo del formulario */
         form {
             background: rgba(0, 0, 0, 0.7);
@@ -76,14 +89,6 @@
             background-color: rgba(0, 0, 0, 0.9);
         }
 
-        /* Estilo de la sección de contenido */
-        .content {
-            position: relative;
-            color: white;
-            text-align: center;
-            z-index: 1;
-        }
-
         /* Estilo del botón de contacto */
         #contacto-btn {
             padding: 10px 20px;
@@ -106,6 +111,7 @@
     </style>
 </head>
 <body>
+    <!-- Contenedor del video de fondo -->
     <div class="video-background">
         <video autoplay muted loop>
             <source src="https://github.com/T020/PMP/raw/refs/heads/main/ParAzul%202.mp4" type="video/mp4">
@@ -113,6 +119,12 @@
         </video>
     </div>
 
+    <!-- Logo de la marca -->
+    <div class="logo">
+        <img src="https://github.com/T020/PMP/blob/main/PMPlogo-removebg-preview.png?raw=true" alt="Logo PMP">
+    </div>
+
+    <!-- Contenido principal -->
     <div class="content">
         <!-- Botón de contacto -->
         <button id="contacto-btn" onclick="toggleFormulario()">Contacto</button>
@@ -156,3 +168,4 @@
     </script>
 </body>
 </html>
+
