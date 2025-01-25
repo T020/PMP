@@ -85,7 +85,7 @@
             width: 50%;
             max-width: 500px;
             display: none;
-            text-align: left;
+            text-align: center; /* Campos centrados */
             position: fixed;
             top: 0;
             left: 50%;
@@ -101,12 +101,23 @@
         }
 
         form input, form select, form button[type="submit"] {
-            margin: 10px 0;
+            margin: 10px auto;
             padding: 12px;
             width: 80%;
             border: none;
             border-radius: 5px;
             font-size: 16px;
+        }
+
+        /* Estilo del botón de envío */
+        form button[type="submit"] {
+            background-color: #2e8b57; /* Botón de color más oscuro */
+            color: white;
+            cursor: pointer;
+        }
+
+        form button[type="submit"]:hover {
+            background-color: #1e6b3f; /* Color más oscuro al hacer hover */
         }
 
         /* Estilo de la galería */
@@ -223,4 +234,3 @@
     </script>
 </body>
 </html>
-
