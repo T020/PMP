@@ -177,6 +177,12 @@
         // Función para mostrar u ocultar el formulario
         function toggleFormulario() {
             var formulario = document.getElementById("formulario");
+            var galeria = document.getElementById("galeria");
+            // Ocultar galería si está visible
+            if (galeria.style.display === "block") {
+                galeria.style.display = "none";
+            }
+            // Mostrar/ocultar formulario
             if (formulario.style.display === "none") {
                 formulario.style.display = "block"; // Muestra el formulario
             } else {
@@ -187,6 +193,12 @@
         // Función para mostrar u ocultar la galería
         function toggleGaleria() {
             var galeria = document.getElementById("galeria");
+            var formulario = document.getElementById("formulario");
+            // Ocultar formulario si está visible
+            if (formulario.style.display === "block") {
+                formulario.style.display = "none";
+            }
+            // Mostrar/ocultar galería
             if (galeria.style.display === "none") {
                 galeria.style.display = "block"; // Muestra la galería
             } else {
@@ -196,4 +208,3 @@
     </script>
 </body>
 </html>
-
