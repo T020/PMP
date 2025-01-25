@@ -93,14 +93,30 @@
             margin-bottom: 50px;
         }
 
-        input, select, button[type="submit"] {
-            margin: 10px 0;
-            padding: 10px;
-            width: 90%;
-            border: none;
-            border-radius: 5px;
+        /* Estilo de la galería */
+        .galeria {
+            background: rgba(64, 179, 230, 0.30); /* Fondo similar al formulario */
+            padding: 20px;
+            border-radius: 10px;
+            display: none; /* Inicialmente oculta */
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 50px;
+            text-align: center;
+            max-width: 350px;
+            overflow-y: scroll;
+            max-height: 400px; /* Limita la altura de la galería */
         }
 
+        .galeria img {
+            margin: 10px;
+            width: 100%;
+            max-width: 300px; /* Ajusta el tamaño de las imágenes */
+            height: auto;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -119,12 +135,9 @@
 
     <!-- Contenedor de los botones -->
     <div class="button-container">
-        <!-- Agregar más botones -->
         <button id="otro-boton">Informacion</button>
         <button id="otro-boton2">Rubik</button>
-        <button id="otro-boton3">Galeria</button>
-
-        <!-- Botón de contacto (último) -->
+        <button id="otro-boton3" onclick="toggleGaleria()">Galeria</button>
         <button id="contacto-btn" onclick="toggleFormulario()">Contacto</button>
     </div>
 
@@ -153,6 +166,13 @@
         <button type="submit">Enviar</button>
     </form>
 
+    <!-- Galería de imágenes oculta -->
+    <div id="galeria" class="galeria">
+        <img src="https://github.com/T020/PMP/blob/main/aguila.jpg?raw=true" alt="Aguila">
+        <img src="https://github.com/T020/PMP/blob/main/elefante.jpeg?raw=true" alt="Elefante">
+        <img src="https://github.com/T020/PMP/blob/main/observarse.jpg?raw=true" alt="Observarse">
+    </div>
+
     <script>
         // Función para mostrar u ocultar el formulario
         function toggleFormulario() {
@@ -161,6 +181,16 @@
                 formulario.style.display = "block"; // Muestra el formulario
             } else {
                 formulario.style.display = "none"; // Oculta el formulario
+            }
+        }
+
+        // Función para mostrar u ocultar la galería
+        function toggleGaleria() {
+            var galeria = document.getElementById("galeria");
+            if (galeria.style.display === "none") {
+                galeria.style.display = "block"; // Muestra la galería
+            } else {
+                galeria.style.display = "none"; // Oculta la galería
             }
         }
     </script>
