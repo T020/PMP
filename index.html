@@ -9,11 +9,10 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden;
             font-family: Arial, sans-serif;
         }
 
-        /* Contenedor del video */
+        /* Contenedor del video de fondo */
         .video-background {
             position: absolute;
             top: 0;
@@ -64,7 +63,7 @@
 
         button {
             padding: 10px 35px;
-            background-color: rgba(64,179,230,0.20);
+            background-color: rgba(64, 179, 230, 0.20);
             color: white;
             border: none;
             border-radius: 5px;
@@ -73,79 +72,85 @@
         }
 
         button:hover {
-            background-color: rgba(64,179,230,0.35);
+            background-color: rgba(64, 179, 230, 0.35);
         }
 
         /* Estilo del formulario */
-        form {
-            background: rgba(64,179,230,0.30);
-            padding: 20px;
+        #formulario {
+            background-color: rgba(0, 0, 51, 0.95); /* Azul oscuro translúcido */
+            padding: 30px;
             border-radius: 10px;
             display: none; /* Por defecto está oculto */
-            text-align: left;
+            text-align: center;
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50%;
-            max-width: 500px;
-            height: auto;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Cubre toda la pantalla */
             overflow-y: auto;
         }
 
-        form h2 {
+        #formulario h2 {
             text-align: center;
-            font-size: 20px;
+            font-size: 24px;
             margin-bottom: 20px;
-            color: #002366; /* Azul oscuro */
+            color: white;
         }
 
-        form input, form select, form textarea, form button[type="submit"] {
+        #formulario label {
+            display: block;
+            margin: 15px 0 5px;
+            color: white; /* Letras de los encabezados en blanco */
+            font-weight: bold;
+            text-align: left;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #formulario input, #formulario select, #formulario textarea, #formulario button[type="submit"] {
+            display: block;
             margin: 10px auto;
             padding: 12px;
             width: 80%;
+            max-width: 400px; /* Máximo ancho */
             border: none;
             border-radius: 5px;
             font-size: 16px;
         }
 
-        form textarea {
+        #formulario textarea {
             height: 80px;
             resize: none;
         }
 
-        form label {
-            color: #002366; /* Azul oscuro */
-            font-weight: bold;
-        }
-
-        form button[type="submit"] {
+        #formulario button[type="submit"] {
             background-color: #002366; /* Azul oscuro */
             color: white;
             cursor: pointer;
+            font-size: 16px;
         }
 
-        form button[type="submit"]:hover {
+        #formulario button[type="submit"]:hover {
             background-color: #001a4d; /* Azul más oscuro */
         }
 
         /* Estilo de la galería */
-        .galeria {
-            background: rgba(64, 179, 230, 0.30);
-            padding: 20px;
+        #galeria {
+            background-color: rgba(0, 0, 51, 0.95); /* Azul oscuro translúcido */
+            padding: 30px;
             border-radius: 10px;
             display: none; /* Por defecto está oculto */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60%;
-            height: auto;
             text-align: center;
-            overflow-y: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Cubre toda la pantalla */
+            overflow-y: auto; /* Scroll vertical si hay muchas imágenes */
         }
 
-        .galeria img {
+        #galeria img {
             margin: 10px;
             width: 100%;
             max-width: 450px;
@@ -170,13 +175,11 @@
 
     <!-- Contenedor de los botones -->
     <div class="button-container">
-        <button id="informacion-btn">Información</button>
-        <button id="rubik-btn">Rubik</button>
         <button id="galeria-btn" onclick="toggleGaleria()">Galería</button>
         <button id="formulario-btn" onclick="toggleFormulario()">Contacto</button>
     </div>
 
-    <!-- Formulario oculto -->
+    <!-- Formulario -->
     <form id="formulario" action="https://formspree.io/f/mqaeakqr" method="POST">
         <h2>Formulario de Inscripción</h2>
         <label for="nombre">Nombre:</label>
@@ -205,8 +208,8 @@
         <button type="submit">Enviar</button>
     </form>
 
-    <!-- Galería de imágenes oculta -->
-    <div id="galeria" class="galeria">
+    <!-- Galería -->
+    <div id="galeria">
         <img src="https://github.com/T020/PMP/blob/main/aguila.jpg?raw=true" alt="Águila">
         <img src="https://github.com/T020/PMP/blob/main/elefante.jpeg?raw=true" alt="Elefante">
         <img src="https://github.com/T020/PMP/blob/main/observarse.jpg?raw=true" alt="Observarse">
