@@ -76,28 +76,37 @@
             background-color: rgba(64,179,230,0.35);
         }
 
-       /* Estilo del formulario */
-form {
-    background: rgba(64,179,230,0.30);
-    padding: 20px;
-    border-radius: 10px;
-    display: inline-block;
-    width: 50%;
-    max-width: 350px;
-    display: none;
-    text-align: left;
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 50px;
-    height: 400px; /* Altura definida */
-    overflow-y: auto; /* Si el contenido excede la altura, aparecerá un scroll */
-}
+        /* Estilo del formulario */
+        form {
+            background: rgba(64,179,230,0.30);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            width: 50%;
+            max-width: 450px; /* Aumenta el ancho */
+            display: none;
+            text-align: left;
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-bottom: 50px;
+            height: 500px; /* Aumenta la altura */
+            overflow-y: auto;
+        }
+
+        form input, form select, form button[type="submit"] {
+            margin: 10px 0;
+            padding: 12px;
+            width: 100%; /* Los campos ocuparán todo el ancho disponible */
+            border: none;
+            border-radius: 5px;
+            font-size: 16px; /* Aumenta el tamaño del texto */
+        }
 
         /* Estilo de la galería */
         .galeria {
-            background: rgba(64, 179, 230, 0.30); /* Fondo similar al formulario */
+            background: rgba(64, 179, 230, 0.30);
             padding: 20px;
             border-radius: 10px;
             display: none; /* Inicialmente oculta */
@@ -107,9 +116,9 @@ form {
             transform: translateX(-50%);
             margin-bottom: 50px;
             text-align: center;
-            max-width: 350px;
+            max-width: 450px; /* Ajuste el máximo ancho */
             overflow-y: scroll;
-            max-height: 400px; /* Limita la altura de la galería */
+            max-height: 500px; /* Ajusta la altura de la galería */
         }
 
         .galeria img {
@@ -210,3 +219,4 @@ form {
     </script>
 </body>
 </html>
+
