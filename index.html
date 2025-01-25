@@ -81,16 +81,15 @@
             background: rgba(64,179,230,0.30);
             padding: 20px;
             border-radius: 10px;
-            display: inline-block;
+            display: none; /* Por defecto está oculto */
+            text-align: left;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 50%;
             max-width: 500px;
-            display: none;
-            text-align: center; /* Campos centrados */
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 100%; /* Establece la altura a 100% */
+            height: auto;
             overflow-y: auto;
         }
 
@@ -98,11 +97,7 @@
             text-align: center;
             font-size: 20px;
             margin-bottom: 20px;
-        }
-
-        form label {
-            color: #003366; /* Azul oscuro para los encabezados */
-            font-weight: bold;
+            color: #002366; /* Azul oscuro */
         }
 
         form input, form select, form textarea, form button[type="submit"] {
@@ -115,19 +110,23 @@
         }
 
         form textarea {
-            height: 70px; /* Al menos 3 renglones */
-            resize: none; /* Desactiva el redimensionamiento */
+            height: 80px;
+            resize: none;
         }
 
-        /* Estilo del botón de envío */
+        form label {
+            color: #002366; /* Azul oscuro */
+            font-weight: bold;
+        }
+
         form button[type="submit"] {
-            background-color: #003366; /* Azul oscuro */
+            background-color: #002366; /* Azul oscuro */
             color: white;
             cursor: pointer;
         }
 
         form button[type="submit"]:hover {
-            background-color: #001a33; /* Azul más oscuro al hacer hover */
+            background-color: #001a4d; /* Azul más oscuro */
         }
 
         /* Estilo de la galería */
@@ -135,14 +134,15 @@
             background: rgba(64, 179, 230, 0.30);
             padding: 20px;
             border-radius: 10px;
-            display: none;
+            display: none; /* Por defecto está oculto */
             position: fixed;
-            top: 0;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
-            height: 100%; /* Establece la altura a 100% */
+            transform: translate(-50%, -50%);
+            width: 60%;
+            height: auto;
             text-align: center;
-            overflow-y: scroll;
+            overflow-y: auto;
         }
 
         .galeria img {
@@ -170,72 +170,63 @@
 
     <!-- Contenedor de los botones -->
     <div class="button-container">
-        <button id="otro-boton">Informacion</button>
-        <button id="otro-boton2">Rubik</button>
-        <button id="otro-boton3" onclick="toggleGaleria()">Galeria</button>
-        <button id="contacto-btn" onclick="toggleFormulario()">Contacto</button>
+        <button id="informacion-btn">Información</button>
+        <button id="rubik-btn">Rubik</button>
+        <button id="galeria-btn" onclick="toggleGaleria()">Galería</button>
+        <button id="formulario-btn" onclick="toggleFormulario()">Contacto</button>
     </div>
 
     <!-- Formulario oculto -->
     <form id="formulario" action="https://formspree.io/f/mqaeakqr" method="POST">
         <h2>Formulario de Inscripción</h2>
-        <label for="nombre">Nombre:</label><br>
-        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
 
-        <label for="apellido">Apellido:</label><br>
-        <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required><br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required>
 
-        <label for="email">Correo Electrónico:</label><br>
-        <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required><br>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
 
-        <label for="genero">Género:</label><br>
+        <label for="genero">Género:</label>
         <select id="genero" name="genero" required>
             <option value="">Selecciona una opción</option>
             <option value="masculino">Masculino</option>
             <option value="femenino">Femenino</option>
             <option value="otro">Otro</option>
-        </select><br>
+        </select>
 
-        <label for="fecha">Fecha de Nacimiento:</label><br>
-        <input type="date" id="fecha" name="fecha" required><br>
+        <label for="fecha">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha" name="fecha" required>
 
-        <label for="mensaje">Escribe unas palabras:</label><br>
-        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea><br>
+        <label for="mensaje">Deja tus palabras:</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe algo aquí..."></textarea>
 
         <button type="submit">Enviar</button>
     </form>
 
+    <!-- Galería de imágenes oculta -->
+    <div id="galeria" class="galeria">
+        <img src="https://github.com/T020/PMP/blob/main/aguila.jpg?raw=true" alt="Águila">
+        <img src="https://github.com/T020/PMP/blob/main/elefante.jpeg?raw=true" alt="Elefante">
+        <img src="https://github.com/T020/PMP/blob/main/observarse.jpg?raw=true" alt="Observarse">
+    </div>
+
     <script>
-        // Función para mostrar u ocultar el formulario
         function toggleFormulario() {
             var formulario = document.getElementById("formulario");
             var galeria = document.getElementById("galeria");
-            // Ocultar galería si está visible
-            if (galeria.style.display === "block") {
-                galeria.style.display = "none";
-            }
-            // Mostrar/ocultar formulario
-            if (formulario.style.display === "none") {
-                formulario.style.display = "block"; // Muestra el formulario
-            } else {
-                formulario.style.display = "none"; // Oculta el formulario
-            }
+
+            galeria.style.display = "none"; // Oculta galería si está visible
+            formulario.style.display = formulario.style.display === "block" ? "none" : "block";
         }
 
-        // Función para mostrar u ocultar la galería
         function toggleGaleria() {
             var galeria = document.getElementById("galeria");
             var formulario = document.getElementById("formulario");
-            // Ocultar formulario si está visible
-            if (formulario.style.display === "block") {
-                formulario.style.display = "none";
-            }
-            // Mostrar/ocultar galería
-            if (galeria.style.display === "none") {
-                galeria.style.display = "block"; // Muestra la galería
-            } else {
-                galeria.style.display = "none"; // Oculta la galería
-            }
+
+            formulario.style.display = "none"; // Oculta formulario si está visible
+            galeria.style.display = galeria.style.display === "block" ? "none" : "block";
         }
     </script>
 </body>
