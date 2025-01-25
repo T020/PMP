@@ -95,10 +95,16 @@
             overflow-y: auto;
         }
 
+        form h2 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
         form input, form select, form button[type="submit"] {
             margin: 10px 0;
             padding: 12px;
-            width: 100%; /* Los campos ocuparán todo el ancho disponible */
+            width: 100%; /* Los campos ahora ocuparán el 100% del ancho del formulario */
             border: none;
             border-radius: 5px;
             font-size: 16px; /* Aumenta el tamaño del texto */
@@ -154,6 +160,7 @@
 
     <!-- Formulario oculto -->
     <form id="formulario" action="https://formspree.io/f/mqaeakqr" method="POST">
+        <h2>Formulario de Inscripción</h2>
         <label for="nombre">Nombre:</label><br>
         <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required><br>
 
@@ -219,4 +226,3 @@
     </script>
 </body>
 </html>
-
