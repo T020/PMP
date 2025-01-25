@@ -100,7 +100,12 @@
             margin-bottom: 20px;
         }
 
-        form input, form select, form button[type="submit"] {
+        form label {
+            color: #003366; /* Azul oscuro para los encabezados */
+            font-weight: bold;
+        }
+
+        form input, form select, form textarea, form button[type="submit"] {
             margin: 10px auto;
             padding: 12px;
             width: 80%;
@@ -109,15 +114,20 @@
             font-size: 16px;
         }
 
+        form textarea {
+            height: 70px; /* Al menos 3 renglones */
+            resize: none; /* Desactiva el redimensionamiento */
+        }
+
         /* Estilo del botón de envío */
         form button[type="submit"] {
-            background-color: #2e8b57; /* Botón de color más oscuro */
+            background-color: #003366; /* Azul oscuro */
             color: white;
             cursor: pointer;
         }
 
         form button[type="submit"]:hover {
-            background-color: #1e6b3f; /* Color más oscuro al hacer hover */
+            background-color: #001a33; /* Azul más oscuro al hacer hover */
         }
 
         /* Estilo de la galería */
@@ -189,15 +199,11 @@
         <label for="fecha">Fecha de Nacimiento:</label><br>
         <input type="date" id="fecha" name="fecha" required><br>
 
+        <label for="mensaje">Escribe unas palabras:</label><br>
+        <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea><br>
+
         <button type="submit">Enviar</button>
     </form>
-
-    <!-- Galería de imágenes oculta -->
-    <div id="galeria" class="galeria">
-        <img src="https://github.com/T020/PMP/blob/main/aguila.jpg?raw=true" alt="Aguila">
-        <img src="https://github.com/T020/PMP/blob/main/elefante.jpeg?raw=true" alt="Elefante">
-        <img src="https://github.com/T020/PMP/blob/main/observarse.jpg?raw=true" alt="Observarse">
-    </div>
 
     <script>
         // Función para mostrar u ocultar el formulario
